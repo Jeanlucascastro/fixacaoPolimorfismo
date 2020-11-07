@@ -19,12 +19,15 @@ public class ImportedProduct extends Product {
 
 	public void setCustomsFree(Double customsFree) {
 		this.customsFree = customsFree;
-	}
+	} 
 	
 	public Double totalPrice () {
 		return getPrice() + customsFree;
 	}
 	
+	public String PriceTag() {
+		return getName() + String.format("%.2f", totalPrice()) + "(Customs free :) " + String.format("%.2f", customsFree) + ")";
+	}
 	
 	
 }
